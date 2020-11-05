@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+  <color name="colorMorado">#9933CC</color>
+  <color name="colorPrimary">#669900</color>
+  <color name="colorPrimaryDark">#669900</color>
+  <color name="colorAccent">#FF8800</color>
+  <color name="colorBlanco">#FFFFFF</color>
+  <color name="colorHintBlanco">#7FFFFFFF</color>
+  <color name="colorNaranja">#FF8800</color>
+  <color name="negro">#000000</color>
+</resources>

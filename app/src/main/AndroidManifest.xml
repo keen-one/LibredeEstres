@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:tools="http://schemas.android.com/tools"
+  package="keen.libredeestres"
+  tools:ignore="GoogleAppIndexingWarning">
+
+  <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+  <uses-permission android:name="android.permission.INTERNET" />
+  <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+
+  <application
+    android:allowBackup="true"
+    android:fullBackupContent="@xml/backup_descriptor"
+    android:hardwareAccelerated="false"
+    android:icon="@mipmap/ic_launcher"
+    android:label="@string/app_name"
+    android:largeHeap="true"
+    android:roundIcon="@mipmap/ic_launcher_round"
+    android:supportsRtl="true"
+    android:theme="@style/AppTheme"
+    android:usesCleartextTraffic="true"
+    tools:ignore="GoogleAppIndexingWarning">
+    <activity
+      android:configChanges="keyboardHidden|screenSize|orientation"
+      android:name="keen.libredeestres.SplashScreen"
+      android:screenOrientation="portrait"
+      android:theme="@style/SplashTheme">
+      <intent-filter>
+        <action android:name="android.intent.action.MAIN" />
+        <category android:name="android.intent.category.LAUNCHER" />
+      </intent-filter>
+    </activity>
+    <activity
+      android:configChanges="keyboardHidden|screenSize|orientation"
+      android:name="keen.libredeestres.MusicActivity" />
+    <activity
+      android:configChanges="keyboardHidden|screenSize|orientation"
+      android:name="keen.libredeestres.PuzzleActivity"
+      android:parentActivityName=".MainActivityPuzzle">
+      <meta-data
+        android:name="android.support.PARENT_ACTIVITY"
+        android:value=".MainActivityPuzzle" />
+    </activity>
+    <activity
+      android:configChanges="keyboardHidden|screenSize|orientation"
+      android:name="keen.libredeestres.MainActivityPuzzle"
+      android:screenOrientation="portrait" />
+    <activity
+      android:configChanges="keyboardHidden|screenSize|orientation"
+      android:label="@string/app_name"
+      android:name="keen.libredeestres.MainActivity" />
+
+    <provider
+      android:authorities="${applicationId}.fileprovider"
+      android:exported="false"
+      android:grantUriPermissions="true"
+      android:name="androidx.core.content.FileProvider">
+      <meta-data
+        android:name="android.support.FILE_PROVIDER_PATHS"
+        android:resource="@xml/file_paths" />
+    </provider>
+  </application>
+</manifest>
